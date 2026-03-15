@@ -77,3 +77,57 @@ Strong complaints or safety concerns are treated as high urgency
 Delivery or service delays are treated as medium urgency
 Suggestions or positive comments are treated as low urgency
 The AI model helps infer this from the language used by the customer.
+
+-----------------------------------------------------------------------------------
+Here's how you can generate the OpenAI token for your upcoming MLS/LVC/Projects.
+
+1. Once you sign in to Olympus, click on the Settings option in the dropdown that appears on clicking your profile icon in the top-right part of the screen. You will be able to see an option called OpenAI Token.
+
+
+
+ 2. Clicking on CREATE TOKEN will assign you a Token and an API Base as follows:
+
+
+
+ 3. This Token (further referred to as API Key) and API Base are required to be utilized in the notebooks for this module in order to call the OpenAI model via API for inference.
+
+ 
+
+Loading API Key via Google Colab Secrets
+
+Click on the “Key icon” in the left sidebar in Colab.
+Click “+ Add new secret”. Please refer to the screenshot for reference:
+secrets_1-2.png
+
+In the Name field, enter OPENAI_API_KEY. In the Value field, paste your OpenAI API Key.
+Toggle Notebook access for secret key. Please refer to the screenshot for reference:
+secrets_2-2.png
+
+Now in your notebook, access it using the following code:
+Python------------------------------------------------------------------------------------------------------------------
+
+CODE:
+
+import os
+
+from google.colab import userdata # Access user-specific data securely
+
+openai_api_key = userdata.get(‘OPENAI_API_KEY')
+
+  
+
+ 
+
+Important NOTE : OpenAI Key Usage Guidelines: 
+
+The following are the account limits associated with the OpenAI Token and Key you will receive:
+
+1. Maximum Credit Limit: $20
+
+2. Requests per Minute (RPM) Limit: 50
+
+3. Maximum Daily Credit Limit: $4
+
+ 
+
+Since this OpenAI Key, with its account limits, will also be required as part of Projects, you are encouraged to use it sparingly - only for the upcoming MLS, and Project notebooks. Please refrain from utilizing it for any personal or other professional projects. If you encounter any challenges or issues setting up or using this API Key, please do not hesitate to contact us via Support Request.
